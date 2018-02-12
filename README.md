@@ -5,15 +5,18 @@ This Node.js CRUD code use
 - Express.js framework
 - SQLite database
 - sequelize ORM
+- dotenv module for setting environment
 ```
 npm init
 
 npm install --save express sqlite3 sequelize body-parser
+
+npm install --save dotenv
 ```
 
 ## Database
 
-The application connect to SQLite database using sequalize. The configuration of database added in 'models/index.js'. Create folder data on the root project for SQLite storage path.
+The application connect to SQLite database using sequalize. The configuration of database added in `models/index.js`. Create folder `data` on the root project for SQLite storage path.
 
 ```
 var sequelize = new Sequelize('example', 'root', '', {
@@ -25,7 +28,7 @@ var sequelize = new Sequelize('example', 'root', '', {
 });
 ```
 
-Initialize the configuration and connect to database on 'app.js'.
+Initialize the configuration and connect to database on `app.js`.
 ```
 var models = require("./models");
 
@@ -36,10 +39,10 @@ models.sequelize.sync().then(function() {
 });
 ```
 
-This app use database named 'example' and 'books' table which has 4 columns. 
+This app use database named `example` and `books` table which has 4 columns. 
 
 ## Route
-Create 'routes' folder on the root path and put route file there. After that initialiaze and register route file path on 'app.js' file.
+Create `routes` folder on the root path and put route file there. After that initialiaze and register route file path on `app.js` file.
 
 ```
 var books = require('./routes/books');
