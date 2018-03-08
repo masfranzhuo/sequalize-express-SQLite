@@ -3,7 +3,7 @@ var app = express();
 var bodyParser = require('body-parser');
 var sqlite = require('sqlite3');
 var env = require('dotenv').load();
-var port = 8080;
+var port = process.env.PORT || 8080;
 
 // models
 var models = require("./models");
