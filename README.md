@@ -49,3 +49,6 @@ var books = require('./routes/books');
 
 app.use('/books', books);
 ```
+
+## Documentation
+This API documented with [Swagger](https://app.swaggerhub.com/apis/masfranzhuo/sequalize-express-SQLite/1.0.0) and hosted on [Heroku](http://sequalize-express-sqlite.herokuapp.com/)
