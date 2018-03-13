@@ -5,18 +5,16 @@ var router = express.Router();
 // middleware
 var checkIDInput = function (req, res, next) {  
     console.log('Check ID input');
-    var id = parseInt(req.params.id);
-    if(Number.isInteger(id)) {
-        next();
-    } else {
+    if(isNaN(req.params.id)) {
         console.log('Invalid ID supplied');
         res.status(400).json('Invalid ID supplied');
+    } else {
+        next();
     }
 };
 var checkIDExist = function (req, res, next) {  
     console.log('Check ID exist');
-    var id = req.params.id;
-    Book.count({ where: { id: id } }).then(count => {
+    Book.count({ where: { id: req.params.id } }).then(count => {
         if (count != 0) {
             next();
         } else {
