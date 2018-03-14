@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/masfranzhuo/sequalize-express-SQLite.svg?branch=master)](https://travis-ci.org/masfranzhuo/sequalize-express-SQLite)
 # Node.js sequelize express CRUD
 Node.js CRUD application based on the SQLite database design and Express.js framework
 
